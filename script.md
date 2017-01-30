@@ -1,4 +1,4 @@
-> Never type in TypeScript
+> TypeScript never type
 > If you have a function that never returns, TypeScript infers the return type as never. 
 > A good thing about never is that it can only ever be assigned to another never. 
 
