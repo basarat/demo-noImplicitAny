@@ -44,7 +44,7 @@ if (foo !== 123) {
   bar = 456
 }
 ```
-You can use this to do exhaustive checks in unions. For example let say you have a variable returned from a server that can be a string or a number
+You can use this to do exhaustive checks in union types. For example let say you have a variable returned from a server that can be a string or a number
 
 ```
 declare var foo: 
@@ -68,7 +68,7 @@ if (typeof foo === 'string') {
 }
 ```
 
-Later if someone another type to the union, you will get nice errors for all the places that were not handled
+Later if you need to add another type to the union, you will get nice errors for all the places where that type was not handled
 
 ```
 declare var foo: 
@@ -84,7 +84,7 @@ if (typeof foo === 'string') {
 }
 ```
 
-And then if you handle those cases as well the errors will go away
+In this case you can add another typeof check to handle this new case cases and then the errors go away
 
 ```
 declare var foo:

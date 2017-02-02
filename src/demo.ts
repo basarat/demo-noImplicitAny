@@ -1,5 +1,14 @@
-const foo = 123
-if (foo != 123) {
-  let bar = foo
-  bar = 456
+declare var foo: 
+  | string
+  | number
+  | boolean
+
+if (typeof foo === 'string') {
+  /** todo */
+} else if (typeof foo === 'number') {
+  /** todo */
+} else if (typeof foo === 'boolean') { 
+  
+}else {
+  const check: never = foo;
 }
