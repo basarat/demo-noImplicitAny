@@ -58,3 +58,18 @@ import { sum } from './demo'
 sum(1, 2)
 ```
 
+one thing to be aware of with `noImplicitAny` is that it also prevents indexer access into objects. As an example consider an object foo that has a few members 
+
+```
+const foo = {
+  a: 123,
+  b: 456
+}
+```
+We can go ahead and get all its values using `Object.keys` and mapping each key to a value in foo. 
+
+```
+const values = Object.keys(foo).map(key => foo[key])
+```
+
+However TypeScript will complain that the object foo does not have an index signature. We can suppress any implicitAny errors for index signatures with another compiler flag `suppressImplicitAnyIndexErrors`
