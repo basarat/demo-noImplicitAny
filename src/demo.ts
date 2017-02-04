@@ -1,14 +1,6 @@
-declare var foo: 
-  | string
-  | number
-  | boolean
+export let lastSumResult: number
 
-if (typeof foo === 'string') {
-  /** todo */
-} else if (typeof foo === 'number') {
-  /** todo */
-} else if (typeof foo === 'boolean') { 
-  
-}else {
-  const check: never = foo;
+export function sum(a: number, b: number) {
+  lastSumResult = a + b
+  return lastSumResult
 }
