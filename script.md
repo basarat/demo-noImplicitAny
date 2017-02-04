@@ -30,12 +30,16 @@ The main reason why the any type is bad is because it is compatible with all typ
 
 
 ```
-import { sum } from './demo'
-
 sum(true, true)
 ```
 
-This is almost definitely not the intended use case of the sum function. To catch all the cases where TypeScript cannot infer the type reliably you can enable the flag `noImplicitAny` in your tsconfig.json
+This is almost definitely not the intended use case of the sum function. Similarly you can assign any value you want to the lastSumResult variable.
+
+```
+lastSumResult = false
+```
+
+To catch all the cases where TypeScript cannot infer the reliably the intended type of a variable or parameter you can enable the flag `noImplicitAny` in your tsconfig.json
 
 As soon as you switch this on, you now have to provide annotations for any variables whose type cannot be inferred e.g. the parameters for sum, and the lastSumResult variable.
 
@@ -72,4 +76,6 @@ We can go ahead and get all its values using `Object.keys` and mapping each key 
 const values = Object.keys(foo).map(key => foo[key])
 ```
 
-However TypeScript will complain that the object foo does not have an index signature. We can suppress any implicitAny errors for index signatures with another compiler flag `suppressImplicitAnyIndexErrors`
+However TypeScript will complain that the object foo does not have an index signature. 
+
+To make it easier for you to write dynamic code like this without having to forgo noImplicitAny completely, we can use the compiler flag `suppressImplicitAnyIndexErrors`
