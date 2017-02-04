@@ -1,10 +1,9 @@
 > TypeScript noImplicitAny
 
-> Increase your TypeScript type safety with `noImplicitAny`.
+> Increase TypeScript type safety with `noImplicitAny`.
 
 > TypeScript tries to infer as much about your code as it can.
 > But sometimes there really is not enough context for it to infer reliably. To see all such cases you 
-
 
 
 
@@ -38,7 +37,7 @@ sum(true, true)
 
 This is almost definitely not the intended use case of the sum function. To catch all the cases where TypeScript cannot infer the type reliably you can enable the flag `noImplicitAny` in your tsconfig.json
 
-As soon as you switch this on you now have to provide annotations for any variables whose type cannot be inferred e.g. the parameters for sum, and the lastSumResult variable.
+As soon as you switch this on, you now have to provide annotations for any variables whose type cannot be inferred e.g. the parameters for sum, and the lastSumResult variable.
 
 
 ```
@@ -56,5 +55,6 @@ And with these annotations in place the errors cascade to misss-usages of the th
 ```
 import { sum } from './demo'
 
-sum(1,2)
+sum(1, 2)
 ```
+
